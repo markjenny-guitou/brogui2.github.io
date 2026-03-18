@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人趣事 - 我的生活点滴</title>
+    <!-- 先引入主样式（保证导航栏/页脚样式统一） -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 再引入趣事详情页专属样式 -->
+    <link rel="stylesheet" href="css/stories.css">
+</head>
+<body>
+    <!-- 导航栏：和主页面完全一致，当前页面高亮 -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">难崩瞬间</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="photos.html">个人帅照</a></li>
+                <!-- 当前页面高亮 -->
+                <li><a href="stories.html" style="color: #e74c3c; font-weight: bold;">个人趣事</a></li>
+                <li><a href="complaints.html">个人牢骚</a></li>
+                <li><a href="memories.html">女神回忆录</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 趣事详情页主内容 -->
+    <main class="stories-main">
+        <!-- 页面标题 -->
+        <div class="stories-header">
+            <h1>神的操作</h1>
+            <p>那些又傻又可爱的瞬间 😜</p>
+        </div>
+
+        <!-- 趣事列表 -->
+        <div class="stories-list">
+            <!-- 趣事1 -->
+            <div class="story-item">
+                <!-- 可选配图：不需要可删除img标签 -->
+                <img src="images/story1.jpg" alt="C语言踩坑趣事" class="story-img">
+                <div class="story-content">
+                    <h3 class="story-title">❌ 拉屎不慎，手机掉落厕所</h3>
+                    <p class="story-time">2026-03-01 | 编程日常</p>
+                    <div class="story-desc">
+                        <p>哈哈哈，一次拉屎的时候，一改往日的窜稀节奏，这一次拉半天拉不出来，于是我就掏出手机进行游玩，经过一番酣畅淋漓的大战，我终于拉完了，但是正当我起身擦屁股的时候，我的手机从我的
+                            裤包里滑落，一头载进了咖啡色的堆积物上，我不知道是开心还是难过，好在没有掉进坑里消失，坏在满屏的巧克力酱难以直视。最后之后换了个手机壳，加长时间多次的清洗结局
+                        </p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 趣事2 -->
+            <div class="story-item">
+                <div class="story-content">
+                    <h3 class="story-title">🏸 还没想好，ai写的</h3>
+                    <p class="story-time">2026-02-15 | 校园生活</p>
+                    <div class="story-desc">
+                        <p>开学选体育课脑子一热选了羽毛球，本以为能耍帅，结果第一节课就翻车了——握拍姿势不对，发球全发歪，接发球直接漏接，一节课下来我光捡球就跑了800米，室友笑我说“你不是来打球的，是来给球场扫地的”。</p>
+                        <p>现在练了半个月，终于能接住几个球了，虽然还是菜，但至少不用一直捡球了😂。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 趣事3 -->
+            <div class="story-item">
+                <div class="story-content">
+                    <h3 class="story-title">💻 还没想好，ai写的”</h3>
+                    <p class="story-time">2026-01-20 | 编程练习</p>
+                    <div class="story-desc">
+                        <p>想复刻C语言的猜数字游戏到网页上，用JS写逻辑。本来以为很简单，结果写着写着把“随机数范围”和“判断条件”搞混了，玩家猜中了还提示“错了”，猜错了反而提示“对了”。</p>
+                        <p>对着代码调试了1小时，最后发现是把「>」写成了「<」，改完瞬间正常了——果然编程里细节决定成败啊！</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 可无限新增趣事，复制上面的story-item结构即可 -->
+            <!-- <div class="story-item">
+                <div class="story-content">
+                    <h3 class="story-title">自定义标题</h3>
+                    <p class="story-time">日期 | 分类</p>
+                    <div class="story-desc">
+                        <p>自定义趣事内容...</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- 返回首页按钮 -->
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">← 返回首页</a>
+        </div>
+    </main>
+
+    <!-- 页脚：和主页面一致 -->
+    <footer>
+        <p>© 2026 我的个人主页 | 记录生活的每一个小瞬间</p>
+    </footer>
+</body>
+</html>

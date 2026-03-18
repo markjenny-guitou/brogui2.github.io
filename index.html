@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页 - 生活点滴</title>
+    <!-- 引入外部CSS文件（CSS代码单独放在css/style.css里） -->
+    <link rel="stylesheet" href="css/1.css">
+</head>
+<body>
+    <!-- 导航栏：固定在顶部，方便跳转各页面 -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">你也想了解神吗</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="photos.html">个人帅照</a></li>
+                <li><a href="stories.html">个人趣事</a></li>
+                <li><a href="complaints.html">个人牢骚</a></li>
+                <li><a href="memories.html">女神回忆录</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主内容区：4个板块从上到下排列 -->
+    <main>
+        <!-- 1. 个人帅照板块 -->
+        <section id="photos" class="section-item">
+            <div class="section-content">
+                <!-- 帅照展示区 -->
+                <img src="images/2.jpg" alt="我的帅照" class="section-img">
+                <h2 class="section-title">神颜</h2>
+                <p class="section-desc">看看得了，别爱上我</p>
+                <!-- 跳转按钮：指向photos.html -->
+                <a href="photos.html" class="section-btn">查看更多帅照 →</a>
+            </div>
+        </section>
+
+        <!-- 2. 个人趣事板块 -->
+        <section id="stories" class="section-item">
+            <div class="section-content">
+                <h2 class="section-title">雷霆之事</h2>
+                <p class="section-desc">超级无敌雷霆抽象猎奇区</p>
+                <ul class="section-list">
+                    <li>✅ 拉屎的时候手机掉进厕所了嘻嘻</li>
+                    <li>✅ </li>
+                    <li>✅ 尝试用JS写小游戏，结果把自己绕晕了</li>
+                </ul>
+                <!-- 跳转按钮：指向stories.html -->
+                <a href="stories.html" class="section-btn">查看更多趣事 →</a>
+            </div>
+        </section>
+
+        <!-- 3. 个人牢骚板块 -->
+        <section id="complaints" class="section-item">
+            <div class="section-content">
+                <h2 class="section-title">个人牢骚</h2>
+                <p class="section-desc">偶尔的小吐槽，释放一下压力～</p>
+                <ul class="section-list">
+                    <li>😮‍💨 上牛魔的早八</li>
+                    <li>😮‍💨 领导说，寝室竟然只需要三四年就可以六改四了哦</li>
+                    <li>😮‍💨 今天纯吃吃了80块，六百六十六</li>
+                </ul>
+                <!-- 跳转按钮：指向complaints.html -->
+                <a href="complaints.html" class="section-btn">查看更多牢骚 →</a>
+            </div>
+        </section>
+
+        <!-- 4. 女神回忆录板块 -->
+        <section id="memories" class="section-item">
+            <div class="section-content">
+                <h2 class="section-title">女神回忆录</h2>
+                <p class="section-desc">记录到今天为止遇到的大多数女神</p>
+                <ul class="section-list">
+                    <li>💓 目光所及，皆为女神</li>
+
+                </ul>
+                <!-- 跳转按钮：指向memories.html -->
+                <a href="memories.html" class="section-btn">查看回忆录 →</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2026 我的个人主页 | 记录生活的每一个小瞬间</p>
+    </footer>
+
+    <!-- 简单JS：实现导航栏点击平滑滚动（可选） -->
+    <script>
+        // 导航栏平滑滚动到页面内板块（首页内跳转）
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // 只对首页内的锚点做平滑滚动，跳转其他页面则正常跳转
+                const targetHref = this.getAttribute('href');
+                if (targetHref.startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(targetHref).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

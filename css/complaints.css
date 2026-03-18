@@ -1,0 +1,298 @@
+/* 全局重置（避免样式冲突） */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 导航栏样式：和帅照/趣事页保持一致的横向布局+分割线 */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    padding: 0 20px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    gap: 0;
+}
+
+.nav-logo {
+    font-size: 22px;
+    font-weight: 500;
+    color: #2d3748;
+    margin-right: 30px;
+    white-space: nowrap;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-menu li {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* 分割线：每个选项之间的竖线 */
+.nav-menu li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background-color: #e2e8f0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #4a5568;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 22px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* 当前页高亮（个人牢骚）：高饱和紫，荒诞感起点 */
+.nav-menu a[href="complaints.html"] {
+    color: #9f7aea;
+    font-weight: 500;
+}
+
+/* 悬停效果：底部紫线下划线，强化割裂感 */
+.nav-menu a:hover {
+    color: #9f7aea;
+}
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #9f7aea;
+    transition: width 0.3s ease;
+}
+.nav-menu a:hover::after {
+    width: 60%;
+}
+
+/* 牢骚页主内容区：浅灰底+撞色点缀，荒诞割裂感 */
+.complaints-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 20px 60px;
+    background-color: #f0f2f5; /* 浅灰底，让撞色更突出 */
+    min-height: calc(100vh - 70px);
+}
+
+/* 页面标题区：撞色标题，荒诞感拉满 */
+.complaints-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.complaints-header h1 {
+    font-size: 32px;
+    background: linear-gradient(90deg, #fc8181, #f6ad55, #48bb78, #4299e1, #9f7aea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.complaints-header p {
+    font-size: 18px;
+    color: #667eea; /* 浅紫，和标题渐变呼应 */
+}
+
+/* 牢骚列表容器 */
+.complaints-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* 单个牢骚项样式：多色彩割裂边框+撞色阴影 */
+.complaint-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    /* 四色边框：上橙、右绿、下蓝、左紫，极致割裂 */
+    border-top: 3px solid #f6ad55;
+    border-right: 3px solid #48bb78;
+    border-bottom: 3px solid #4299e1;
+    border-left: 3px solid #9f7aea;
+    box-shadow: 0 4px 15px rgba(159, 122, 234, 0.1);
+    transition: all 0.4s ease;
+}
+
+.complaint-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(159, 122, 234, 0.15);
+}
+
+/* 牢骚标签：撞色设计，每个标签不同色彩 */
+.complaint-tag {
+    display: inline-block;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+/* 标签色彩随机分配，强化荒诞感 */
+.complaint-tag:nth-child(1) { background-color: #fc8181; color: #fff; }
+.complaint-tag:nth-child(2) { background-color: #f6ad55; color: #fff; }
+.complaint-tag:nth-child(3) { background-color: #48bb78; color: #fff; }
+.complaint-tag:nth-child(4) { background-color: #4299e1; color: #fff; }
+.complaint-tag:nth-child(5) { background-color: #9f7aea; color: #fff; }
+
+/* 牢骚内容区 */
+.complaint-content {
+    width: 100%;
+}
+
+/* 牢骚标题：撞色渐变，和主标题呼应 */
+.complaint-title {
+    font-size: 20px;
+    background: linear-gradient(90deg, #fc8181, #9f7aea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* 牢骚时间/分类：浅蓝，和底部边框呼应 */
+.complaint-time {
+    color: #4299e1;
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* 牢骚描述文字：深灰，阅读舒适，不抢撞色风头 */
+.complaint-desc {
+    color: #4a5568;
+    font-size: 16px;
+    line-height: 2;
+}
+
+.complaint-desc p {
+    margin-bottom: 10px;
+    text-indent: 2em;
+}
+
+/* 温馨小提示：撞色背景，荒诞中带点温柔 */
+.complaint-tip {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 15px;
+    background: linear-gradient(90deg, #f6ad55, #48bb78, #4299e1);
+    border-radius: 8px;
+}
+
+.complaint-tip p {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* 返回首页按钮：渐变撞色，延续荒诞风格 */
+.back-btn-container {
+    text-align: center;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background: linear-gradient(90deg, #fc8181, #9f7aea);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: linear-gradient(90deg, #9f7aea, #fc8181);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(159, 122, 234, 0.2);
+}
+
+/* 页脚样式：浅灰底+浅紫文字，和整体风格统一 */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #9f7aea;
+    font-size: 14px;
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* 响应式适配：手机端 */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+    }
+    .nav-logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    .nav-menu li:not(:last-child)::after {
+        display: none;
+    }
+    .nav-menu a {
+        padding: 10px 15px;
+        height: auto;
+    }
+    .complaints-header h1 {
+        font-size: 26px;
+    }
+    .complaint-item {
+        padding: 20px;
+    }
+    .complaint-title {
+        font-size: 18px;
+    }
+    .complaint-desc {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+    .complaint-tip p {
+        font-size: 16px;
+    }
+}

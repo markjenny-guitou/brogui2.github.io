@@ -1,0 +1,311 @@
+/* 全局重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 导航栏样式：横向布局+分割线+浅灰高级感 */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    padding: 0 20px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    gap: 0;
+}
+
+.nav-logo {
+    font-size: 22px;
+    font-weight: 500;
+    color: #2d3748;
+    margin-right: 30px;
+    white-space: nowrap;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-menu li {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* 分割线：每个选项之间的竖线 */
+.nav-menu li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background-color: #e2e8f0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #4a5568;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 22px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* 当前页高亮 */
+.nav-menu a[href="photos.html"] {
+    color: #3182ce;
+    font-weight: 500;
+}
+
+/* 悬停效果 */
+.nav-menu a:hover {
+    color: #3182ce;
+}
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #3182ce;
+    transition: width 0.3s ease;
+}
+.nav-menu a:hover::after {
+    width: 60%;
+}
+
+/* 帅照页主内容区：浅灰背景+高级留白 */
+.photos-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px 60px;
+    background-color: #f7fafc;
+    min-height: calc(100vh - 70px);
+}
+
+/* 页面标题区 */
+.photos-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.photos-header h1 {
+    font-size: 32px;
+    color: #2d3748;
+    margin-bottom: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.photos-header p {
+    font-size: 18px;
+    color: #718096;
+}
+
+/* 照片网格布局：4张照片适配+间距优化 */
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 适配4张照片 */
+    gap: 30px; /* 加大间距更透气 */
+    margin-bottom: 60px; /* 与下方板块拉开距离 */
+}
+
+.photo-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.photo-img {
+    width: 100%;
+    height: 260px; /* 略微加高照片，视觉更协调 */
+    object-fit: cover;
+}
+
+.photo-desc {
+    padding: 20px;
+    text-align: center;
+}
+
+.photo-desc h3 {
+    color: #2d3748;
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.photo-desc p {
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* 新增：照片故事板块样式 */
+.photo-story-section {
+    max-width: 900px;
+    margin: 0 auto 50px; /* 居中+与按钮拉开距离 */
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.story-title {
+    font-size: 24px;
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* 标题下划线装饰 */
+.story-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: #3182ce;
+}
+
+.story-content {
+    color: #4a5568;
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.story-content p {
+    margin-bottom: 10px;
+    text-indent: 2em; /* 首行缩进，更规范 */
+}
+
+/* 新增：标签云样式 */
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tag {
+    padding: 8px 16px;
+    background-color: #e8f4f8; /* 浅蓝背景，贴合整体色调 */
+    color: #3182ce;
+    font-size: 14px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background-color: #3182ce;
+    color: #ffffff;
+    transform: scale(1.05); /* 悬停轻微放大 */
+}
+
+/* 返回首页按钮：浅蓝简约风格 */
+.back-btn-container {
+    text-align: center;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #3182ce;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #2b6cb0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.2);
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #718096;
+    font-size: 14px;
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* 响应式适配：手机端 */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+    }
+    .nav-logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    .nav-menu li:not(:last-child)::after {
+        display: none;
+    }
+    .nav-menu a {
+        padding: 10px 15px;
+        height: auto;
+    }
+    .photos-header h1 {
+        font-size: 26px;
+    }
+    .photo-img {
+        height: 220px;
+    }
+    .photo-story-section {
+        padding: 20px;
+    }
+    .story-title {
+        font-size: 20px;
+    }
+    .story-content {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+}

@@ -1,0 +1,300 @@
+/* 全局基础调整：更细腻的字体渲染 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    -webkit-font-smoothing: antialiased; /* 字体抗锯齿，更细腻 */
+}
+
+/* 导航栏样式：和帅照/趣事/牢骚页完全统一的横向布局+分割线 */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    padding: 0 20px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    gap: 0;
+}
+
+.nav-logo {
+    font-size: 22px;
+    font-weight: 500;
+    color: #2d3748;
+    margin-right: 30px;
+    white-space: nowrap;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-menu li {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* 分割线：每个选项之间的竖线 */
+.nav-menu li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background-color: #e2e8f0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #4a5568;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 22px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* 当前页高亮（女神回忆录）：暖焦糖色，贴合原有温馨风格 */
+.nav-menu a[href="memories.html"] {
+    color: #8b5a2b;
+    font-weight: 500;
+}
+
+/* 悬停效果：底部焦糖线下划线，和原有风格统一 */
+.nav-menu a:hover {
+    color: #8b5a2b;
+}
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #8b5a2b;
+    transition: width 0.3s ease;
+}
+.nav-menu a:hover::after {
+    width: 60%;
+}
+
+/* 回忆录详情页主内容区：暖米色背景，柔和圆角 */
+.memories-main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 100px 20px 60px; /* 适配导航栏高度，调整top padding */
+    background-color: #faf6f0; /* 暖米色底，温馨不刺眼 */
+    border-radius: 16px;
+    margin-top: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); /* 轻微外阴影，提升层次 */
+    min-height: calc(100vh - 70px); /* 保证页面高度铺满 */
+}
+
+/* 页面标题区：简约排版，焦糖色标题 */
+.memories-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0e6d6; /* 浅米色分割线 */
+}
+
+.memories-header h1 {
+    font-size: 32px;
+    color: #8b5a2b; /* 浅焦糖色，温暖高级 */
+    margin-bottom: 10px;
+    font-weight: 500; /* 字体不加粗，更简约 */
+    letter-spacing: 1px; /* 字间距，提升高级感 */
+}
+
+.memories-header p {
+    font-size: 18px;
+    color: #a67c52; /* 浅焦糖色弱化版 */
+    font-weight: 400;
+}
+
+/* 回忆录列表容器：更大的间距，呼吸感 */
+.memories-list {
+    display: flex;
+    flex-direction: column;
+    gap: 35px; /* 加大间距，避免拥挤 */
+    margin-bottom: 50px;
+}
+
+/* 单个回忆项：相框式设计核心 */
+.memory-item {
+    background-color: #ffffff; /* 纯白底色，突出内容 */
+    border-radius: 12px;
+    padding: 30px;
+    /* 相框核心：双层边框+内阴影，模拟相框质感 */
+    border: 1px solid #f0e6d6;
+    box-shadow: 
+        0 2px 8px rgba(139, 90, 43, 0.05), /* 外层浅阴影 */
+        inset 0 0 0 1px rgba(240, 230, 214, 0.5); /* 内层细边框，相框感 */
+    transition: all 0.4s ease; /* 顺滑过渡 */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 相框顶部小装饰：简约线条，提升高级感 */
+.memory-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #f0e6d6, #8b5a2b, #f0e6d6); /* 渐变线条 */
+    opacity: 0.7;
+}
+
+/* 回忆项悬停效果：轻微上浮+阴影加深，互动感 */
+.memory-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 8px 15px rgba(139, 90, 43, 0.08),
+        inset 0 0 0 1px rgba(240, 230, 214, 0.8);
+}
+
+/* 回忆标题：简约排版，焦糖色 */
+.memory-title {
+    color: #8b5a2b;
+    font-size: 19px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* 标题前小装饰：简约圆点，替代爱心更高级 */
+.memory-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: #8b5a2b;
+    border-radius: 50%;
+}
+
+/* 回忆正文：舒适排版，暖灰色文字 */
+.memory-content {
+    color: #5c554c; /* 暖灰色，比纯黑更柔和 */
+    font-size: 16px;
+    line-height: 2; /* 更大行高，阅读更舒适 */
+}
+
+.memory-content p {
+    margin: 0;
+    text-indent: 2em; /* 首行缩进，中文排版 */
+}
+
+/* 暖心结语：相框式卡片，和回忆项呼应 */
+.memories-footer {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #f0e6d6;
+    box-shadow: 0 2px 8px rgba(139, 90, 43, 0.05);
+}
+
+.memories-footer p {
+    color: #8b5a2b;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* 返回首页按钮：焦糖色系，圆角更圆润 */
+.back-btn-container {
+    text-align: center;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 12px 40px;
+    background-color: #8b5a2b; /* 焦糖色按钮 */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px; /* 圆润圆角，高级感 */
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.back-btn:hover {
+    background-color: #704a23; /* 深焦糖色 hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(139, 90, 43, 0.15);
+}
+
+/* 响应式适配：手机端优化 */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+    }
+    .nav-logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    .nav-menu li:not(:last-child)::after {
+        display: none; /* 手机端隐藏分割线，避免拥挤 */
+    }
+    .nav-menu a {
+        padding: 10px 15px;
+        height: auto;
+    }
+    .memories-header h1 {
+        font-size: 26px;
+        letter-spacing: 0.5px;
+    }
+    .memory-item {
+        padding: 25px 20px;
+        gap: 25px;
+    }
+    .memory-title {
+        font-size: 17px;
+    }
+    .memory-content {
+        font-size: 15px;
+        line-height: 1.9;
+    }
+    .memories-footer p {
+        font-size: 16px;
+    }
+    .back-btn {
+        padding: 10px 30px;
+        font-size: 15px;
+    }
+}

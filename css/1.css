@@ -1,0 +1,164 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+/* 导航栏样式 */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    padding: 0 20px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #34495e;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #e74c3c; /* 红色系，更贴近青春感 */
+}
+
+/* 主内容区：给导航栏留顶部空间 */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 90px 20px 50px;
+}
+
+/* 每个板块的通用样式：从上到下排列，间距适中 */
+.section-item {
+    width: 100%;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 板块图片样式（帅照） */
+.section-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* 板块标题 */
+.section-title {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+/* 板块描述文字 */
+.section-desc {
+    font-size: 16px;
+    color: #7f8c8d;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* 板块列表（趣事/牢骚/回忆录） */
+.section-list {
+    list-style: none;
+    margin-bottom: 30px;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.section-list li {
+    padding: 10px 0;
+    color: #34495e;
+    border-bottom: 1px dashed #eee;
+}
+
+/* 跳转按钮样式 */
+.section-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #e74c3c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.section-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #7f8c8d;
+    font-size: 14px;
+    background-color: #f5f5f5;
+    margin-top: 20px;
+}
+
+/* 响应式适配：手机端 */
+@media (max-width: 768px) {
+    .nav-menu li {
+        margin-left: 15px;
+    }
+    .nav-menu a {
+        font-size: 14px;
+    }
+    .section-title {
+        font-size: 24px;
+    }
+    .section-img {
+        width: 150px;
+        height: 150px;
+    }
+    .section-list {
+        max-width: 90%;
+    }
+}

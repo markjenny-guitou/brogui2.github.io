@@ -1,0 +1,267 @@
+/* 全局重置（避免样式冲突） */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 导航栏样式：和个人帅照页保持一致的横向布局+分割线 */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    padding: 0 20px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    gap: 0;
+}
+
+.nav-logo {
+    font-size: 22px;
+    font-weight: 500;
+    color: #2d3748;
+    margin-right: 30px;
+    white-space: nowrap;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-menu li {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* 分割线：每个选项之间的竖线 */
+.nav-menu li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background-color: #e2e8f0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #4a5568;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 22px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* 当前页高亮（个人趣事）：活力橙红色，青春感拉满 */
+.nav-menu a[href="stories.html"] {
+    color: #f56565; /* 活力橙红，比之前的红色更柔和鲜艳 */
+    font-weight: 500;
+}
+
+/* 悬停效果：和个人帅照页保持一致的底部下划线 */
+.nav-menu a:hover {
+    color: #f56565;
+}
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #f56565;
+    transition: width 0.3s ease;
+}
+.nav-menu a:hover::after {
+    width: 60%;
+}
+
+/* 趣事页主内容区：浅暖灰背景，活力青春感 */
+.stories-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 20px 60px;
+    background-color: #fffaf0; /* 浅暖米黄，比纯灰更有活力 */
+    min-height: calc(100vh - 70px);
+}
+
+/* 页面标题区 */
+.stories-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.stories-header h1 {
+    font-size: 32px;
+    color: #e53e3e; /* 活力橙红标题，呼应导航高亮 */
+    margin-bottom: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.stories-header p {
+    font-size: 18px;
+    color: #dd6b20; /* 浅橙，青春感 */
+}
+
+/* 趣事列表容器 */
+.stories-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* 单个趣事项样式：活力白卡+橙红点缀 */
+.story-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(245, 101, 101, 0.08); /* 浅橙红阴影，活力不刺眼 */
+    border-left: 4px solid #f56565; /* 左侧橙红边框，强化活力感 */
+    transition: all 0.4s ease;
+}
+
+.story-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(245, 101, 101, 0.12);
+}
+
+/* 趣事配图样式 */
+.story-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 auto 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 趣事内容区 */
+.story-content {
+    width: 100%;
+}
+
+/* 趣事标题：活力橙红 */
+.story-title {
+    color: #e53e3e;
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* 趣事时间/分类：浅橙 */
+.story-time {
+    color: #dd6b20;
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* 趣事描述文字：深灰，阅读舒适 */
+.story-desc {
+    color: #4a5568;
+    font-size: 16px;
+    line-height: 2;
+}
+
+.story-desc p {
+    margin-bottom: 10px;
+    text-indent: 2em;
+}
+
+/* 返回首页按钮：活力橙红，和整体色调统一 */
+.back-btn-container {
+    text-align: center;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #f56565;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #e53e3e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 101, 101, 0.2);
+}
+
+/* 页脚样式：和整体色调统一 */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #718096;
+    font-size: 14px;
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* 响应式适配：手机端 */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+    }
+    .nav-logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    .nav-menu li:not(:last-child)::after {
+        display: none;
+    }
+    .nav-menu a {
+        padding: 10px 15px;
+        height: auto;
+    }
+    .stories-header h1 {
+        font-size: 26px;
+    }
+    .story-item {
+        padding: 20px;
+    }
+    .story-title {
+        font-size: 18px;
+    }
+    .story-desc {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+    .story-img {
+        max-width: 100%;
+    }
+}

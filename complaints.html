@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人牢骚 - 我的生活点滴</title>
+    <!-- 先引入主样式（保证导航栏/页脚样式统一） -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 再引入牢骚详情页专属样式 -->
+    <link rel="stylesheet" href="css/complaints.css">
+</head>
+<body>
+    <!-- 导航栏：和主页面完全一致，当前页面高亮 -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">我的生活点滴</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="photos.html">个人帅照</a></li>
+                <li><a href="stories.html">个人趣事</a></li>
+                <!-- 当前页面高亮 -->
+                <li><a href="complaints.html" style="color: #e74c3c; font-weight: bold;">个人牢骚</a></li>
+                <li><a href="memories.html">女神回忆录</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 牢骚详情页主内容 -->
+    <main class="complaints-main">
+        <!-- 页面标题 -->
+        <div class="complaints-header">
+            <h1>我的小小牢骚</h1>
+            <p>偶尔吐槽，释放压力 😤</p>
+        </div>
+
+        <!-- 牢骚列表 -->
+        <div class="complaints-list">
+            <!-- 牢骚1 -->
+            <div class="complaint-item">
+                <div class="complaint-tag">早八暴击</div>
+                <div class="complaint-content">
+                    <h3 class="complaint-title">还没想好，ai生成的</h3>
+                    <p class="complaint-time">2026-03-10 | 校园吐槽</p>
+                    <div class="complaint-desc">
+                        <p>为什么大学要安排早八啊！家住得离教学楼远，每天7点就要起床，洗漱+买早饭+赶路，到教室已经困得睁不开眼，第一节课全程神游，老师讲的啥完全没听进去。</p>
+                        <p>为了不迟到，咖啡喝到快免疫了，周末补觉能睡12小时，感觉身体被掏空… 能不能把早八全换成下午课啊！</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 牢骚2 -->
+            <div class="complaint-item">
+                <div class="complaint-tag">代码崩溃</div>
+                <div class="complaint-content">
+                    <h3 class="complaint-title">还没想好，ai生成的</h3>
+                    <p class="complaint-time">2026-03-05 | 编程日常</p>
+                    <div class="complaint-desc">
+                        <p>写JS代码，一个简单的表单验证功能，逻辑看了800遍都觉得没问题，但就是不生效。从下午3点调到晚上8点，最后发现是变量名多打了一个字母——把「userName」写成了「userNam」。</p>
+                        <p>那一刻真的想砸键盘，5小时就耗在一个拼写错误上，编程人的崩溃往往只在一瞬间😭。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 牢骚3 -->
+            <div class="complaint-item">
+                <div class="complaint-tag">干饭难题</div>
+                <div class="complaint-content">
+                    <h3 class="complaint-title">还没想好，ai生成的</h3>
+                    <p class="complaint-time">2026-03-02 | 干饭日常</p>
+                    <div class="complaint-desc">
+                        <p>学校就3个食堂，翻来覆去就那几道菜，一楼的番茄炒蛋永远是凉的，二楼的麻辣烫汤底越来越淡，三楼的盖浇饭油多到能拌饭。</p>
+                        <p>想点外卖吧，配送费+满减算下来比食堂贵一倍，月末生活费告急又只能吃食堂… 每天最纠结的就是“今天吃什么”，真的麻了。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 牢骚4 -->
+            <div class="complaint-item">
+                <div class="complaint-tag">社交疲惫</div>
+                <div class="complaint-content">
+                    <h3 class="complaint-title">还没想好，ai生成的</h3>
+                    <p class="complaint-time">2026-02-28 | 日常吐槽</p>
+                    <div class="complaint-desc">
+                        <p>部门聚餐、社团团建、室友约逛街… 不是不想去，是真的没精力。本来上课+写作业就够累了，还要强装热情聊天、应付客套话，每次参加完都要躺半天才能缓过来。</p>
+                        <p>只想安安静静待在宿舍敲代码、看剧，为什么成年人（准成年人）要应付这么多社交啊！</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 可无限新增牢骚，复制上面的complaint-item结构即可 -->
+            <!-- <div class="complaint-item">
+                <div class="complaint-tag">自定义标签</div>
+                <div class="complaint-content">
+                    <h3 class="complaint-title">自定义标题</h3>
+                    <p class="complaint-time">日期 | 分类</p>
+                    <div class="complaint-desc">
+                        <p>自定义牢骚内容...</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- 温馨小提示（缓解牢骚氛围） -->
+        <div class="complaint-tip">
+            <p>✨ 吐槽完毕，继续热爱生活～</p>
+        </div>
+
+        <!-- 返回首页按钮 -->
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">← 返回首页</a>
+        </div>
+    </main>
+
+    <!-- 页脚：和主页面一致 -->
+    <footer>
+        <p>© 2026 我的个人主页 | 记录生活的每一个小瞬间</p>
+    </footer>
+</body>
+</html>
